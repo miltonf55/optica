@@ -1,0 +1,23 @@
+{
+  "name": "optica",
+  "version": "0.0.1",
+  "description": "Pagina de optica 20 mas 20",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miltonf55/optica.git"
+  },
+  "keywords": [
+    "Optica",
+    "Node"
+  ],
+  "author": "Milton Ocampo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/miltonf55/optica/issues"
+  },
+  "homepage": "https://github.com/miltonf55/optica#readme"
+}
