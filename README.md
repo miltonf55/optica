@@ -1,0 +1,2 @@
+# optica
+Proyecto personal
