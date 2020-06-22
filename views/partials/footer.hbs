@@ -67,11 +67,17 @@
 						     <h3>¿Quieres qué nosotros te contactemos?</h3>
 							 <div class="newsletter_form">
 							    <form action="index.html">
-								   <input type="email" placeholder="Tu nombre" name="#" required />
-                                   <input type="email" placeholder="Tu número telefonico" name="#" required />
+								   <input type="text" placeholder="Tu nombre" name="#" required maxlength="60"/>
+                                   <input type="text" placeholder="Tu número telefónico" name="#" required maxlength="10"/>
+                                   <input type="email" placeholder="Tu correo" name="#" required maxlength="40"/>
                                    <input type="email" placeholder="Tu correo" name="#" required />
-                                   <input type="email" placeholder="Tu correo" name="#" required />
-								   <button>Contactenme</button>
+                                   <select name="#" id="ser" class="sele" required>
+                                        <option value="volvo">Escoge el servicio...</option>
+                                        <option value="saab">Lentes completos</option>
+                                        <option value="opel">Lentes de contacto</option>
+                                        <option value="audi">Reparación</option>
+                                    </select>
+								   <button type="submit">Contactenme</button>
 								</form>
 							 </div>
 						 </div>

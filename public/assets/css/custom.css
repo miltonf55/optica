@@ -3,3 +3,17 @@
     width: 13rem;
     height: 3.28rem;
 }
+.contact{
+    color: #ffff;
+}
+.contact:focus{
+    color: #ffbebe;
+}
+.sele{
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    overflow: visible;
+}

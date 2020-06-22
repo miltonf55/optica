@@ -9,11 +9,33 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                     <ul class="navbar-nav">
-                        <li><a class="nav-link active" style="background:#f2184f;color:#fff;" href="/">Inicio</a></li>
-                        <li><a class="nav-link" href="/about">Sobre Nosotros</a></li>
-                        <li><a class="nav-link" href="/service">Servicios</a></li>
-                        <li><a class="nav-link" href="#">Blog</a></li>
-						<li><a class="nav-link" href="/contact">Contactanos</a></li>
+                        {{#if Inicio}}
+                            <li><a class="nav-link active" style="background:#f2184f;color:#fff;" href="#">Inicio</a></li>
+                            <li><a class="nav-link" href="/about">Sobre Nosotros</a></li>
+                            <li><a class="nav-link" href="/service">Servicios</a></li>
+                            <li><a class="nav-link" href="/contact">Contactanos</a></li>
+                        {{else}}{{#if About}}
+                            <li><a class="nav-link" href="/">Inicio</a></li>
+                            <li><a class="nav-link active" style="background:#f2184f;color:#fff;" href="#">Sobre Nosotros</a></li>
+                            <li><a class="nav-link" href="/service">Servicios</a></li>
+                            <li><a class="nav-link" href="/contact">Contactanos</a></li>
+                        {{else}}{{#if Service}}
+                            <li><a class="nav-link" href="/">Inicio</a></li>
+                            <li><a class="nav-link" href="/about">Sobre Nosotros</a></li>
+                            <li><a class="nav-link active" style="background:#f2184f;color:#fff;" href="#">Servicios</a></li>
+                            <li><a class="nav-link" href="/contact">Contactanos</a></li>
+                        {{else}}{{#if Contact}}
+                            <li><a class="nav-link" href="/">Inicio</a></li>
+                            <li><a class="nav-link" href="/about">Sobre Nosotros</a></li>
+                            <li><a class="nav-link" href="/service">Servicios</a></li>
+                            <li><a class="nav-link active" style="background:#f2184f;color:#fff;" href="#">Contactanos</a></li>
+                        {{else}}
+                            <li><a class="nav-link" href="/">Inicio</a></li>
+                            <li><a class="nav-link" href="/about">Sobre Nosotros</a></li>
+                            <li><a class="nav-link" href="/service">Servicios</a></li>
+                            <li><a class="nav-link" href="/contact">Contactanos</a></li>
+                        {{/if}}{{/if}}{{/if}}{{/if}}
+                        
                     </ul>
                 </div>
             </div>
