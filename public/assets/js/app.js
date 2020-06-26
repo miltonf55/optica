@@ -22,10 +22,10 @@ $(() => {
     $(document).ready(() => {
         $("#contact").on("click", () => {
             var data = {
-                name: $("#nom").val().split(" ").join(""),
-                correo: $("#email").val().split(" ").join(""),
-                tel: $("#tel").val().split(" ").join(""),
-                comentario: $("#com").val().split(" ").join("")
+                name: $("#nom"),
+                correo: $("#email"),
+                tel: $("#tel"),
+                comentario: $("#com")
             }
             $.ajax({
                 url: "/contactame",
