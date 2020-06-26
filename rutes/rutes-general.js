@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 
 app.get("/activaJS", (req, res) => {
-    res.send("<div align='center'><br><br><font color='red'><h1 align='center'>Para poder usar ésta página activa JavaScript y regresa a la página anterior</div>");
+    res.send("<div align='center'><br><br><font color='red'><h1 align='center'>Para poder usar ésta página activa JavaScript y recarga</div>");
 });
 
 app.get("/", (req, res) => {

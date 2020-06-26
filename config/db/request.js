@@ -9,14 +9,14 @@ const {
     decifrar
 } = require("../middlewares/cifrado.js");
 
-const guardarPublicacion = (data) => {
+const guardarContacto = (data) => {
     return new Promise((resolve, reject) => {
         pool.getConnection((err, connection) => {
             if (err) {
                 reject(err)
             } else {
                 connection.query(`insert into contacto(nom_com,tel_com,cor_com,com_com,fec_com)
-                    values ('${data.nombre}','${data.descripcion}','${data.fecha}','${data.hora}','${data.minuto}',${data.idTipoPublicacion},${id})`, (err) => {
+                    values ('${data.nombre}','${data.tel}','${data.cor}','${data.fec}')`, (err) => {
                     if (err) {
                         reject(err)
                     } else {
