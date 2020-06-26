@@ -13,7 +13,7 @@ const letras = (checkStr) => {
             break;
         }
     }
-    if (checkStr.length < 1 || checkStr.length > 30) {
+    if (checkStr.length < 1 || checkStr.length > 60) {
         todovalido = false;
     }
     return todovalido;
@@ -38,8 +38,8 @@ const alphaNumC = (checkStr) => {
     }
     return todovalido;
 }
-const alphaNum3 = (checkStr) => {
-    var checkOk = "ABCDEFGHIJHKLMNÑOPQRSTUVWXYZÁÉÍÓÚ" + "abcdefghijklmnopqrstuvwxyzáéíóú" + "@1234567890.¡?¿!<> ";
+const tel = (checkStr) => {
+    var checkOk = "1234567890";
     var todovalido = true;
     for (i = 0; i < checkStr.length; i++) {
         ch = checkStr.charAt(i);
@@ -53,7 +53,7 @@ const alphaNum3 = (checkStr) => {
             break;
         }
     }
-    if (checkStr.length < 1 || checkStr.length > 40) {
+    if (checkStr.length < 1 || checkStr.length > 10) {
         todovalido = false;
     }
     return todovalido;

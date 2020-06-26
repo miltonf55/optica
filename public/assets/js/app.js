@@ -21,12 +21,8 @@ $(() => {
     }
 
     $("#contact").on("click", () => {
-        $("#chart").html(`<div class="progress">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-                        </div>`);
         var data = {
             name: $("#nom").val().split(" ").join(""),
-            date: dateN(),
             correo: $("#email").val().split(" ").join(""),
             tel: $("#tel").val().split(" ").join(""),
             comentario: $("#com").val().split(" ").join("")
@@ -37,10 +33,46 @@ $(() => {
             data,
             success: (datae) => {
                 if (!datae.ok) {
-                    $("#aviso").html(`<div class="alert alert-danger" role="alert">${datae.ms}</div>`)
+                    $("#aviso").html(`
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Error</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                        ${datae.ms}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>`)
                 } else {
                     let html=grafica(datae.proyeccion, data.date);
-                    $("#aviso").html(html);
+                    $("#aviso").html(`
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Genial</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                        ${datae.ms}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>`);
                 }
             }
         });
@@ -48,17 +80,5 @@ $(() => {
 
 
     });
-    function dateN(){
-        var fecha = new Date(); 
-        var mes = fecha.getMonth()+1;
-        var dia = fecha.getDate();
-        var ano = fecha.getFullYear();
-        if(dia<10)
-            dia='0'+dia; 
-        if(mes<10)
-            mes='0'+mes;
-        let f=ano+"-"+mes+"-"+dia;
-        return f;
-    }
 
 });
