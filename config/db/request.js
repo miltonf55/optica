@@ -9,31 +9,23 @@ const {
     decifrar
 } = require("../middlewares/cifrado.js");
 
-const validarCorreo = (correo) => {
+const guardarPublicacion = (data) => {
     return new Promise((resolve, reject) => {
         pool.getConnection((err, connection) => {
             if (err) {
                 reject(err)
             } else {
-                connection.query(`select * from usuario`, (err, res) => {
+                connection.query(`insert into contacto(nom_com,tel_com,cor_com,com_com,fec_com)
+                    values ('${data.nombre}','${data.descripcion}','${data.fecha}','${data.hora}','${data.minuto}',${data.idTipoPublicacion},${id})`, (err) => {
                     if (err) {
                         reject(err)
                     } else {
-                        var disponible = true;
-
-                        for (usuario of res) {
-                            if (decifrar(usuario.cor_usu) === correo) {
-
-                                disponible = false;
-                            }
-                        }
-
-                        resolve(disponible);
+                        resolve("Publicación Guardada");
                     }
                 });
-
             }
             connection.release();
         });
+
     });
 }
